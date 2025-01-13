@@ -1,0 +1,611 @@
+int capmode=1, charrepeat=1, themenum=1, themesound=1, backtime=50;
+sound capbeep;
+timer backtimer;
+class virtualizer
+{
+key_hold delete(KEY_BACK,500,50);
+key_hold delete2(KEY_DELETE,500,50);
+string input(string text, bool secure_input=false,string default_text="")
+{
+capbeep.load("sounds/misc/cap.ogg");
+int cursor;
+string message;
+speak(text,true);
+cursor=0;
+string[] ms;
+if(default_text!="")
+{
+for(uint i=0; i<default_text.length(); i++) ms.insert_last(default_text[i]);
+cursor=ms.length()-1;
+}
+get_characters();
+while(true)
+{
+wait(5);
+if(key_pressed(KEY_TAB))
+speak(text,true);
+string char=string(get_characters());
+if(key_down(KEY_LCONTROL) && key_pressed(KEY_BACK) and cursor!=0)
+{
+speak(message+"cleared text");
+ms.resize(0);
+cursor=0;
+}
+if (key_down(KEY_LCONTROL) or key_down(KEY_RCONTROL))
+{
+if (key_pressed(KEY_V) and secure_input==false)
+{
+string cl=clipboard_read_text();
+if(cl.length()==0)
+{
+speak("There is no text to be pasted.",true);
+}
+else
+{
+speak("text pasted",true);
+for (uint i=0; i<cl.length(); i++)
+{
+ms.insert_at(cursor,cl[i]);
+cursor+=1;
+}
+}
+}
+if(key_pressed(KEY_RETURN) and secure_input==false)
+{
+ms.insert_at(cursor,"\r\n");
+speak("New line",true);
+cursor+=1;
+}
+if (key_pressed(KEY_C) and secure_input==false)
+{
+string a;
+for (uint i=0; i<ms.length(); i++)
+{
+a+=ms[i];
+}
+if(a.length()==0)
+{
+speak("There is no text to be copied.",true);
+}
+else
+{
+speak("text copied",true);
+clipboard_copy_text(a);
+}
+}
+}
+if (key_pressed(KEY_F1))
+{
+if (charrepeat==1)
+{
+speak("character repeat off");
+charrepeat=0;
+}
+else
+{
+speak("character repeat on");
+charrepeat=1;
+}
+}
+if (key_pressed(KEY_F2) and secure_input==false) {
+if (capmode==0) {
+capmode=1;
+speak("Beep for capital letters");
+}
+else if (capmode==1) {
+capmode=2;
+speak("Say 'cap' for capital letters");
+}
+else {
+capmode=0;
+speak("ignore capital letters");
+}
+}
+if (key_pressed(KEY_F3))
+if (themenum==1) {
+themenum=2;
+spool.play_stationary("sounds/misc/misc24.ogg",false);
+speak("theme2");
+}
+else if (themenum==2) {
+themenum=3;
+spool.play_stationary("sounds/misc/misc24.ogg",false);
+speak("theme3");
+}
+else if (themenum==3) {
+themenum=4;
+spool.play_stationary("sounds/misc/misc24.ogg",false);
+speak("theme4");
+}
+else if (themenum==4) {
+themenum=5;
+spool.play_stationary("sounds/misc/misc24.ogg",false);
+speak("theme5");
+}
+else if (themenum==5) {
+themenum=6;
+spool.play_stationary("sounds/misc/misc24.ogg",false);
+speak("theme6");
+}
+else if (themenum==6) {
+themenum=7;
+spool.play_stationary("sounds/misc/misc24.ogg",false);
+speak("theme7");
+}
+else if (themenum==7) {
+themenum=8;
+spool.play_stationary("sounds/misc/misc24.ogg",false);
+speak("theme8");
+}
+else if (themenum==8) {
+themenum=9;
+spool.play_stationary("sounds/misc/misc24.ogg",false);
+speak("theme9");
+}
+else if (themenum==9) {
+themenum=10;
+spool.play_stationary("sounds/misc/misc24.ogg",false);
+speak("theme10");
+}
+else if (themenum==10) {
+themenum=11;
+spool.play_stationary("sounds/misc/misc24.ogg",false);
+speak("theme11");
+}
+else if (themenum==11) {
+themenum=12;
+spool.play_stationary("sounds/misc/misc24.ogg",false);
+speak("theme12");
+}
+else if (themenum==12) {
+themenum=13;
+spool.play_stationary("sounds/misc/misc24.ogg",false);
+speak("theme13");
+}
+else if (themenum==13) {
+themenum=14;
+spool.play_stationary("sounds/misc/misc24.ogg",false);
+speak("theme14");
+}
+else if (themenum==14) {
+themenum=15;
+spool.play_stationary("sounds/misc/misc24.ogg",false);
+speak("theme15");
+}
+else if (themenum==15) {
+themenum=16;
+spool.play_stationary("sounds/misc/misc24.ogg",false);
+speak("theme16");
+}
+else if (themenum==16) {
+themenum=17;
+spool.play_stationary("sounds/misc/misc24.ogg",false);
+speak("theme17");
+}
+else if (themenum==17) {
+themenum=18;
+spool.play_stationary("sounds/misc/misc24.ogg",false);
+speak("theme18");
+}
+else if (themenum==18) {
+themenum=19;
+spool.play_stationary("sounds/misc/misc24.ogg",false);
+speak("theme19");
+}
+else if (themenum==19) {
+themenum=20;
+spool.play_stationary("sounds/misc/misc24.ogg",false);
+speak("theme20");
+}
+else {
+themenum=1;
+spool.play_stationary("sounds/misc/misc24.ogg",false);
+speak("theme1");
+}
+if(char!="")
+{
+if(themenum==1 and char!=" ") spool.play_stationary("sounds/typingThemes/keyA/type"+random(1,10)+".ogg",false);
+if(themenum==1 and char==" ") spool.play_stationary("sounds/typingThemes/keyA/space.ogg",false);
+if(themenum==2 and char!=" ") spool.play_stationary("sounds/typingThemes/keyB/type"+random(1,10)+".ogg",false);
+if(themenum==2 and char==" ") spool.play_stationary("sounds/typingThemes/keyB/space.ogg",false);
+if(themenum==3 and char!=" ") spool.play_stationary("sounds/typingThemes/keyC/type"+random(1,10)+".ogg",false);
+if(themenum==3 and char==" ") spool.play_stationary("sounds/typingThemes/keyC/space.ogg",false);
+if(themenum==4 and char!=" ") spool.play_stationary("sounds/typingThemes/keyD/type"+random(1,4)+".ogg",false);
+if(themenum==4 and char==" ") spool.play_stationary("sounds/typingThemes/keyD/space.ogg",false);
+if(themenum==5 and char!=" ") spool.play_stationary("sounds/typingThemes/keyE/type"+random(1,15)+".ogg",false);
+if(themenum==5 and char==" ") spool.play_stationary("sounds/typingThemes/keyE/space.ogg",false);
+if(themenum==6 and char!=" ") spool.play_stationary("sounds/typingThemes/keyF/type"+random(1,4)+".ogg",false);
+if(themenum==6 and char==" ") spool.play_stationary("sounds/typingThemes/keyF/space.ogg",false);
+if(themenum==7 and char!=" ") spool.play_stationary("sounds/typingThemes/keyG/type.ogg",false);
+if(themenum==7 and char==" ") spool.play_stationary("sounds/typingThemes/keyG/space.ogg",false);
+if(themenum==8 and char!=" ") spool.play_stationary("sounds/typingThemes/keyH/type.ogg",false);
+if(themenum==8 and char==" ") spool.play_stationary("sounds/typingThemes/keyH/space.ogg",false);
+if(themenum==9 and char!=" ") spool.play_stationary("sounds/typingThemes/keyI/type.ogg",false);
+if(themenum==9 and char==" ") spool.play_stationary("sounds/typingThemes/keyI/space.ogg",false);
+if(themenum==10 and char!=" ") spool.play_stationary("sounds/typingThemes/keyJ/type"+random(1,4)+".ogg",false);
+if(themenum==10 and char==" ") spool.play_stationary("sounds/typingThemes/keyJ/space.ogg",false);
+if(themenum==11 and char!=" ") spool.play_stationary("sounds/typingThemes/keyK/type"+random(1,3)+".ogg",false);
+if(themenum==11 and char==" ") spool.play_stationary("sounds/typingThemes/keyK/space.ogg",false);
+if(themenum==12 and char!=" ") spool.play_stationary("sounds/typingThemes/keyL/type"+random(1,2)+".ogg",false);
+if(themenum==12 and char==" ") spool.play_stationary("sounds/typingThemes/keyL/space.ogg",false);
+if(themenum==13 and char!=" ") spool.play_stationary("sounds/typingThemes/keyM/type"+random(1,4)+".ogg",false);
+if(themenum==13 and char==" ") spool.play_stationary("sounds/typingThemes/keyM/space.ogg",false);
+if(themenum==14 and char!=" ") spool.play_stationary("sounds/typingThemes/keyN/type"+random(1,2)+".ogg",false);
+if(themenum==14 and char==" ") spool.play_stationary("sounds/typingThemes/keyN/space.ogg",false);
+if(themenum==15 and char!=" ") spool.play_stationary("sounds/typingThemes/keyO/type.ogg",false);
+if(themenum==15 and char==" ") spool.play_stationary("sounds/typingThemes/keyO/space.ogg",false);
+if(themenum==16 and char!=" ") spool.play_stationary("sounds/typingThemes/keyP/type"+random(1,4)+".ogg",false);
+if(themenum==16 and char==" ") spool.play_stationary("sounds/typingThemes/keyP/space.ogg",false);
+if(themenum==17 and char!=" ") spool.play_stationary("sounds/typingThemes/keyQ/type.ogg",false);
+if(themenum==17 and char==" ") spool.play_stationary("sounds/typingThemes/keyQ/space.ogg",false);
+if(themenum==18 and char!=" ") spool.play_stationary("sounds/typingThemes/keyR/type"+random(1,8)+".ogg",false);
+if(themenum==18 and char==" ") spool.play_stationary("sounds/typingThemes/keyR/space.ogg",false);
+if(themenum==19 and char!=" ") spool.play_stationary("sounds/typingThemes/keyS/type.ogg",false);
+if(themenum==19 and char==" ") spool.play_stationary("sounds/typingThemes/keyS/space.ogg",false);
+if(themenum==20 and char!=" ") spool.play_stationary("sounds/typingThemes/keyT/type.ogg",false);
+if(themenum==20 and char==" ") spool.play_stationary("sounds/typingThemes/keyT/space.ogg",false);
+if (charrepeat==1)
+{
+if(char!=" ")
+{
+if (string_is_upper_case(char)) {
+if (capmode==1) {
+capbeep.stop(); capbeep.play();
+speak(p2w(char),true);
+}
+else if (capmode==2)
+speak("Cap "+p2w(char),true);
+else
+speak(p2w(char),true);
+}
+else
+speak(p2w(char),true);
+}
+else 
+{
+speak("space");
+}
+}
+ms.insert_at(cursor,char);
+cursor+=1;
+}
+if(secure_input==true)
+{
+if (charrepeat==1)
+{
+if(char!="")
+{
+speak("*");
+}
+else
+{
+speak(p2w(char),true);
+}
+}
+}
+if(delete.pressing() and ms.length() > 0 and cursor>=1)
+{
+if(charrepeat==1)
+{
+string char=ms[cursor-1];
+if (char==" ")
+speak("space deleted",true);
+else if(char=="\r\n")
+speak("New line deleted",true);
+else {
+if (string_is_upper_case(char)) {
+if (capmode==1) {
+capbeep.stop(); capbeep.play();
+speak(p2w(char)+" deleted",true);
+}
+else if (capmode==2)
+speak("Cap "+p2w(char)+" deleted",true);
+else
+speak(p2w(char)+" deleted",true);
+}
+else
+speak(p2w(char)+" deleted",true);
+}
+if(secure_input==true)
+{
+if(char!="")
+{
+speak("*"+" deleted",true);
+}
+}
+}
+ms.remove_at(cursor-1);
+cursor-=1;
+if(themenum==1) spool.play_stationary("sounds/typingThemes/keyA/delete.ogg",false);
+if(themenum==2) spool.play_stationary("sounds/typingThemes/keyB/delete.ogg",false);
+if(themenum==3) spool.play_stationary("sounds/typingThemes/keyC/delete.ogg",false);
+if(themenum==4) spool.play_stationary("sounds/typingThemes/keyD/delete.ogg",false);
+if(themenum==5) spool.play_stationary("sounds/typingThemes/keyE/delete.ogg",false);
+if(themenum==6) spool.play_stationary("sounds/typingThemes/keyF/delete.ogg",false);
+if(themenum==7) spool.play_stationary("sounds/typingThemes/keyG/delete.ogg",false);
+if(themenum==8) spool.play_stationary("sounds/typingThemes/keyH/delete.ogg",false);
+if(themenum==9) spool.play_stationary("sounds/typingThemes/keyI/delete.ogg",false);
+if(themenum==10) spool.play_stationary("sounds/typingThemes/keyJ/delete.ogg",false);
+if(themenum==11) spool.play_stationary("sounds/typingThemes/keyK/delete.ogg",false);
+if(themenum==12) spool.play_stationary("sounds/typingThemes/keyL/delete.ogg",false);
+if(themenum==13) spool.play_stationary("sounds/typingThemes/keyM/delete.ogg",false);
+if(themenum==14) spool.play_stationary("sounds/typingThemes/keyN/delete.ogg",false);
+if(themenum==15) spool.play_stationary("sounds/typingThemes/keyO/delete.ogg",false);
+if(themenum==16) spool.play_stationary("sounds/typingThemes/keyP/delete.ogg",false);
+if(themenum==17) spool.play_stationary("sounds/typingThemes/keyQ/delete.ogg",false);
+if(themenum==18) spool.play_stationary("sounds/typingThemes/keyR/delete.ogg",false);
+if(themenum==19) spool.play_stationary("sounds/typingThemes/keyS/delete.ogg",false);
+if(themenum==20) spool.play_stationary("sounds/typingThemes/keyT/delete.ogg",false);
+}
+if(delete2.pressing() and ms.length() > 0 and cursor>=1)
+{
+if(charrepeat==1)
+{
+string char=ms[cursor-1];
+if (char==" ")
+speak("space deleted");
+else if(char=="\r\n")
+speak("New line deleted");
+else {
+if (string_is_upper_case(char)) {
+if (capmode==1) {
+capbeep.stop(); capbeep.play();
+speak(p2w(char)+" deleted",true);
+}
+else if (capmode==2)
+speak("Cap "+p2w(char)+" deleted",true);
+else
+speak(p2w(char)+" deleted",true);
+}
+else
+speak(p2w(char)+" deleted",true);
+}
+if(secure_input==true)
+{
+if(char!="")
+{
+speak("star"+" deleted",true);
+}
+}
+}
+ms.remove_at(cursor-1);
+cursor-=1;
+if(themenum==1) spool.play_stationary("sounds/typingThemes/keyA/delete.ogg",false);
+if(themenum==2) spool.play_stationary("sounds/typingThemes/keyB/delete.ogg",false);
+if(themenum==3) spool.play_stationary("sounds/typingThemes/keyC/delete.ogg",false);
+if(themenum==4) spool.play_stationary("sounds/typingThemes/keyD/delete.ogg",false);
+if(themenum==5) spool.play_stationary("sounds/typingThemes/keyE/delete.ogg",false);
+if(themenum==6) spool.play_stationary("sounds/typingThemes/keyF/delete.ogg",false);
+if(themenum==7) spool.play_stationary("sounds/typingThemes/keyG/delete.ogg",false);
+if(themenum==8) spool.play_stationary("sounds/typingThemes/keyH/delete.ogg",false);
+if(themenum==9) spool.play_stationary("sounds/typingThemes/keyI/delete.ogg",false);
+if(themenum==10) spool.play_stationary("sounds/typingThemes/keyJ/delete.ogg",false);
+if(themenum==11) spool.play_stationary("sounds/typingThemes/keyK/delete.ogg",false);
+if(themenum==12) spool.play_stationary("sounds/typingThemes/keyL/delete.ogg",false);
+if(themenum==13) spool.play_stationary("sounds/typingThemes/keyM/delete.ogg",false);
+if(themenum==14) spool.play_stationary("sounds/typingThemes/keyN/delete.ogg",false);
+if(themenum==15) spool.play_stationary("sounds/typingThemes/keyO/delete.ogg",false);
+if(themenum==16) spool.play_stationary("sounds/typingThemes/keyP/delete.ogg",false);
+if(themenum==17) spool.play_stationary("sounds/typingThemes/keyQ/delete.ogg",false);
+if(themenum==18) spool.play_stationary("sounds/typingThemes/keyR/delete.ogg",false);
+if(themenum==19) spool.play_stationary("sounds/typingThemes/keyS/delete.ogg",false);
+if(themenum==20) spool.play_stationary("sounds/typingThemes/keyT/delete.ogg",false);
+}
+if(key_pressed(KEY_DOWN) or key_pressed(KEY_UP))
+{
+speak("Blank",true);
+string a;
+for (uint i=0; i<ms.length(); i++)
+{
+a+=ms[i];
+}
+speak(a,true);
+}
+if(key_pressed(KEY_LEFT) and cursor>0)
+{
+if(ms.length()>0)
+{
+cursor-=1;
+if (cursor>=ms.length())
+{
+speak("Blank",true);
+}
+else if (ms[cursor]==" ")
+speak("space",true);
+else if(ms[cursor]=="\r\n")
+speak("New line",true);
+else
+{
+if (string_is_upper_case(ms[cursor])) {
+if (capmode==1) {
+capbeep.stop(); capbeep.play();
+speak(p2w(ms[cursor]),true);
+}
+else if (capmode==2)
+speak("Cap "+p2w(ms[cursor]),true);
+else
+speak(p2w(ms[cursor]),true);
+}
+else
+speak(p2w(ms[cursor]),true);
+}
+}
+else
+speak("blank",true);
+}
+if(key_pressed(KEY_RIGHT) and cursor<ms.length())
+{
+if(ms.length() > 0)
+{
+cursor+=1;
+if (cursor>=ms.length())
+speak("Blank",true);
+else if (ms[cursor]==" ")
+speak("space",true);
+else if(ms[cursor]=="\r\n")
+speak("New line",true);
+else
+{
+if (string_is_upper_case(ms[cursor])) {
+if (capmode==1) {
+capbeep.stop(); capbeep.play();
+speak(p2w(ms[cursor]),true);
+}
+else if (capmode==2)
+speak("Cap "+p2w(ms[cursor]),true);
+else
+speak(p2w(ms[cursor]),true);
+}
+else
+speak(p2w(ms[cursor]),true);
+}
+}
+else
+speak("blank",true);
+}
+if(key_pressed(KEY_HOME))
+{
+if(ms.length() > 0)
+{
+cursor=0;
+if (cursor>=ms.length())
+speak("Blank",true);
+else if (ms[cursor]==" ")
+speak("space",true);
+else if(ms[cursor]=="\r\n")
+speak("New line",true);
+else
+{
+if (string_is_upper_case(ms[cursor])) {
+if (capmode==1) {
+capbeep.stop(); capbeep.play();
+speak(p2w(ms[cursor]),true);
+}
+else if (capmode==2)
+speak("Cap "+p2w(ms[cursor]),true);
+else
+speak(p2w(ms[cursor]),true);
+}
+else
+speak(p2w(ms[cursor]),true);
+}
+}
+else
+speak("blank",true);
+}
+if(key_pressed(KEY_END))
+{
+if(ms.length() > 0)
+{
+cursor=ms.length()-1;
+if (cursor>=ms.length())
+speak("Blank",true);
+else if (ms[cursor]==" ")
+speak("space",true);
+else if(ms[cursor]=="\r\n")
+speak("New line",true);
+else
+{
+if (string_is_upper_case(ms[cursor])) {
+if (capmode==1) {
+capbeep.stop(); capbeep.play();
+speak(p2w(ms[cursor]),true);
+}
+else if (capmode==2)
+speak("Cap "+p2w(ms[cursor]),true);
+else
+speak(p2w(ms[cursor]),true);
+}
+else
+speak(p2w(ms[cursor]),true);
+}
+}
+else
+speak("blank",true);
+}
+if(key_pressed(KEY_ESCAPE))
+{
+speak("canselled");
+return "";
+}
+else if(key_pressed(KEY_RETURN))
+{
+if (ms.length() > 0)
+{
+for (uint i=0; i<ms.length(); i++)
+{
+message+=ms[i];
+}
+if(themenum==1) spool.play_stationary("sounds/typingThemes/keyA/return.ogg",false);
+if(themenum==2) spool.play_stationary("sounds/typingThemes/keyB/return.ogg",false);
+if(themenum==3) spool.play_stationary("sounds/typingThemes/keyC/return.ogg",false);
+if(themenum==4) spool.play_stationary("sounds/typingThemes/keyD/return.ogg",false);
+if(themenum==5) spool.play_stationary("sounds/typingThemes/keyE/return.ogg",false);
+if(themenum==6) spool.play_stationary("sounds/typingThemes/keyF/return.ogg",false);
+if(themenum==7) spool.play_stationary("sounds/typingThemes/keyG/return.ogg",false);
+if(themenum==8) spool.play_stationary("sounds/typingThemes/keyH/return.ogg",false);
+if(themenum==9) spool.play_stationary("sounds/typingThemes/keyI/return.ogg",false);
+if(themenum==10) spool.play_stationary("sounds/typingThemes/keyJ/return.ogg",false);
+if(themenum==11) spool.play_stationary("sounds/typingThemes/keyK/return.ogg",false);
+if(themenum==12) spool.play_stationary("sounds/typingThemes/keyL/return.ogg",false);
+if(themenum==13) spool.play_stationary("sounds/typingThemes/keyM/return.ogg",false);
+if(themenum==14) spool.play_stationary("sounds/typingThemes/keyN/return.ogg",false);
+if(themenum==15) spool.play_stationary("sounds/typingThemes/keyO/return.ogg",false);
+if(themenum==16) spool.play_stationary("sounds/typingThemes/keyP/return.ogg",false);
+if(themenum==17) spool.play_stationary("sounds/typingThemes/keyQ/return.ogg",false);
+if(themenum==18) spool.play_stationary("sounds/typingThemes/keyR/return.ogg",false);
+if(themenum==19) spool.play_stationary("sounds/typingThemes/keyS/return.ogg",false);
+if(themenum==20) spool.play_stationary("sounds/typingThemes/keyT/return.ogg",false);
+return message;
+}
+else if (ms.length()==0 or key_pressed(KEY_ESCAPE))
+{
+speak("canselled");
+return "";
+}
+}
+}
+return "";
+}
+}
+string p2w(string c)
+{
+c=string_replace(c,".","dot",true);
+c=string_replace(c,",","comma",true);
+c=string_replace(c,"/","slash",true);
+c=string_replace(c,";","semicolon",true);
+c=string_replace(c,"'","apostrophe",true);
+c=string_replace(c,"[","left bracket",true);
+c=string_replace(c,"]","right bracket",true);
+c=string_replace(c,"\\","backslash",true);
+c=string_replace(c,"`","grave",true);
+c=string_replace(c,"-","dash",true);
+c=string_replace(c,"=","equals",true);
+c=string_replace(c,"<","less than",true);
+c=string_replace(c,">","greater than",true);
+c=string_replace(c,"?","question mark",true);
+c=string_replace(c,":","colon",true);
+c=string_replace(c,"\"","quote",true);
+c=string_replace(c,"~","tilda",true);
+c=string_replace(c,"!","exclamation mark",true);
+c=string_replace(c,"@","at",true);
+c=string_replace(c,"#","number",true);
+c=string_replace(c,"$","dollar",true);
+c=string_replace(c,"%","percent",true);
+c=string_replace(c,"^","caret",true);
+c=string_replace(c,"&","ampersand",true);
+c=string_replace(c,"*","star",true);
+c=string_replace(c,"(","left paren",true);
+c=string_replace(c,")","right paren",true);
+c=string_replace(c,"_","underscore",true);
+c=string_replace(c,"+","plus",true);
+c=string_replace(c,"{","left brace",true);
+c=string_replace(c,"}","right brace",true);
+c=string_replace(c,"|","vertical bar",true);
+c=string_replace(c, "\r", "carriage return", true);
+c=string_replace(c, "\n", "line feed", true);
+c=string_replace(c, "\t", "tab", true);
+c=string_replace(c,"©","copyright sign",true);
+c=string_replace(c,"®","registered sign",true);
+return c;
+}

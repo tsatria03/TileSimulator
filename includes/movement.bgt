@@ -1,0 +1,888 @@
+void move_left()
+{
+if(keyrowhold==1 and movetimer.elapsed>=movetime and moveable==true)
+{
+if(minz>=1)
+{
+if(minx>=0)
+{
+movetimer.restart();
+}
+if(minx==0)
+{
+string[] wallers1=find_files("sounds/objects/walls/"+walltile1+"/*wall*");
+if(platatile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile1+"/"+wallers1[random(0,wallers1.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers2=find_files("sounds/objects/walls/"+walltile2+"/*wall*");
+if(platbtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile2+"/"+wallers2[random(0,wallers2.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers3=find_files("sounds/objects/walls/"+walltile3+"/*wall*");
+if(platctile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile3+"/"+wallers3[random(0,wallers3.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers4=find_files("sounds/objects/walls/"+walltile4+"/*wall*");
+if(platdtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile4+"/"+wallers4[random(0,wallers4.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers5=find_files("sounds/objects/walls/"+walltile5+"/*wall*");
+if(platetile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile5+"/"+wallers5[random(0,wallers5.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers6=find_files("sounds/objects/walls/"+walltile6+"/*wall*");
+if(platftile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile6+"/"+wallers6[random(0,wallers6.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers7=find_files("sounds/objects/walls/"+walltile7+"/*wall*");
+if(platgtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile7+"/"+wallers7[random(0,wallers7.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers8=find_files("sounds/objects/walls/"+walltile8+"/*wall*");
+if(plathtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile8+"/"+wallers8[random(0,wallers8.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers9=find_files("sounds/objects/walls/"+walltile9+"/*wall*");
+if(platitile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile9+"/"+wallers9[random(0,wallers9.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+}
+else
+{
+minx-=1;
+}
+}
+if(minz==0)
+{
+if(minx>=0)
+{
+movetimer.restart();
+}
+if(minx==0)
+{
+string[] wallers1=find_files("sounds/objects/walls/"+walltile1+"/*wall*");
+if(platatile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile1+"/"+wallers1[random(0,wallers1.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers2=find_files("sounds/objects/walls/"+walltile2+"/*wall*");
+if(platbtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile2+"/"+wallers2[random(0,wallers2.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers3=find_files("sounds/objects/walls/"+walltile3+"/*wall*");
+if(platctile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile3+"/"+wallers3[random(0,wallers3.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers4=find_files("sounds/objects/walls/"+walltile4+"/*wall*");
+if(platdtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile4+"/"+wallers4[random(0,wallers4.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers5=find_files("sounds/objects/walls/"+walltile5+"/*wall*");
+if(platetile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile5+"/"+wallers5[random(0,wallers5.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers6=find_files("sounds/objects/walls/"+walltile6+"/*wall*");
+if(platftile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile6+"/"+wallers6[random(0,wallers6.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers7=find_files("sounds/objects/walls/"+walltile7+"/*wall*");
+if(platgtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile7+"/"+wallers7[random(0,wallers7.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers8=find_files("sounds/objects/walls/"+walltile8+"/*wall*");
+if(plathtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile8+"/"+wallers8[random(0,wallers8.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers9=find_files("sounds/objects/walls/"+walltile9+"/*wall*");
+if(platitile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile9+"/"+wallers9[random(0,wallers9.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+}
+else
+{
+minx-=1;
+string[] tilers1=find_files("sounds/objects/platforms/"+platile1+"/*step*");
+if(platatile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile1+"/"+tilers1[random(0,tilers1.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers2=find_files("sounds/objects/platforms/"+platile2+"/*step*");
+if(platbtile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile2+"/"+tilers2[random(0,tilers2.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers3=find_files("sounds/objects/platforms/"+platile3+"/*step*");
+if(platctile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile3+"/"+tilers3[random(0,tilers3.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers4=find_files("sounds/objects/platforms/"+platile4+"/*step*");
+if(platdtile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile4+"/"+tilers4[random(0,tilers4.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers5=find_files("sounds/objects/platforms/"+platile5+"/*step*");
+if(platetile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile5+"/"+tilers5[random(0,tilers5.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers6=find_files("sounds/objects/platforms/"+platile6+"/*step*");
+if(platftile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile6+"/"+tilers6[random(0,tilers6.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers7=find_files("sounds/objects/platforms/"+platile7+"/*step*");
+if(platgtile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile7+"/"+tilers7[random(0,tilers7.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers8=find_files("sounds/objects/platforms/"+platile8+"/*step*");
+if(plathtile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile8+"/"+tilers8[random(0,tilers8.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers9=find_files("sounds/objects/platforms/"+platile9+"/*step*");
+if(platitile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile9+"/"+tilers9[random(0,tilers9.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+}
+}
+}
+}
+void move_right()
+{
+if(keyrowhold==1 and movetimer.elapsed>=movetime and moveable==true)
+{
+if(minz>=1)
+{
+if(minx<=maxx)
+{
+movetimer.restart();
+}
+if(minx==maxx)
+{
+string[] wallers1=find_files("sounds/objects/walls/"+walltile1+"/*wall*");
+if(platatile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile1+"/"+wallers1[random(0,wallers1.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers2=find_files("sounds/objects/walls/"+walltile2+"/*wall*");
+if(platbtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile2+"/"+wallers2[random(0,wallers2.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers3=find_files("sounds/objects/walls/"+walltile3+"/*wall*");
+if(platctile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile3+"/"+wallers3[random(0,wallers3.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers4=find_files("sounds/objects/walls/"+walltile4+"/*wall*");
+if(platdtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile4+"/"+wallers4[random(0,wallers4.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers5=find_files("sounds/objects/walls/"+walltile5+"/*wall*");
+if(platetile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile5+"/"+wallers5[random(0,wallers5.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers6=find_files("sounds/objects/walls/"+walltile6+"/*wall*");
+if(platftile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile6+"/"+wallers6[random(0,wallers6.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers7=find_files("sounds/objects/walls/"+walltile7+"/*wall*");
+if(platgtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile7+"/"+wallers7[random(0,wallers7.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers8=find_files("sounds/objects/walls/"+walltile8+"/*wall*");
+if(plathtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile8+"/"+wallers8[random(0,wallers8.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers9=find_files("sounds/objects/walls/"+walltile9+"/*wall*");
+if(platitile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile9+"/"+wallers9[random(0,wallers9.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+}
+else
+{
+minx+=1;
+}
+}
+if(minz==0)
+{
+if(minx<=maxx)
+{
+movetimer.restart();
+}
+if(minx==maxx)
+{
+string[] wallers1=find_files("sounds/objects/walls/"+walltile1+"/*wall*");
+if(platatile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile1+"/"+wallers1[random(0,wallers1.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers2=find_files("sounds/objects/walls/"+walltile2+"/*wall*");
+if(platbtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile2+"/"+wallers2[random(0,wallers2.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers3=find_files("sounds/objects/walls/"+walltile3+"/*wall*");
+if(platctile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile3+"/"+wallers3[random(0,wallers3.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers4=find_files("sounds/objects/walls/"+walltile4+"/*wall*");
+if(platdtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile4+"/"+wallers4[random(0,wallers4.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers5=find_files("sounds/objects/walls/"+walltile5+"/*wall*");
+if(platetile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile5+"/"+wallers5[random(0,wallers5.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers6=find_files("sounds/objects/walls/"+walltile6+"/*wall*");
+if(platftile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile6+"/"+wallers6[random(0,wallers6.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers7=find_files("sounds/objects/walls/"+walltile7+"/*wall*");
+if(platgtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile7+"/"+wallers7[random(0,wallers7.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers8=find_files("sounds/objects/walls/"+walltile8+"/*wall*");
+if(plathtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile8+"/"+wallers8[random(0,wallers8.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers9=find_files("sounds/objects/walls/"+walltile9+"/*wall*");
+if(platitile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile9+"/"+wallers9[random(0,wallers9.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+}
+else
+{
+minx+=1;
+string[] tilers1=find_files("sounds/objects/platforms/"+platile1+"/*step*");
+if(platatile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile1+"/"+tilers1[random(0,tilers1.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers2=find_files("sounds/objects/platforms/"+platile2+"/*step*");
+if(platbtile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile2+"/"+tilers2[random(0,tilers2.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers3=find_files("sounds/objects/platforms/"+platile3+"/*step*");
+if(platctile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile3+"/"+tilers3[random(0,tilers3.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers4=find_files("sounds/objects/platforms/"+platile4+"/*step*");
+if(platdtile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile4+"/"+tilers4[random(0,tilers4.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers5=find_files("sounds/objects/platforms/"+platile5+"/*step*");
+if(platetile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile5+"/"+tilers5[random(0,tilers5.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers6=find_files("sounds/objects/platforms/"+platile6+"/*step*");
+if(platftile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile6+"/"+tilers6[random(0,tilers6.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers7=find_files("sounds/objects/platforms/"+platile7+"/*step*");
+if(platgtile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile7+"/"+tilers7[random(0,tilers7.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers8=find_files("sounds/objects/platforms/"+platile8+"/*step*");
+if(plathtile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile8+"/"+tilers8[random(0,tilers8.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers9=find_files("sounds/objects/platforms/"+platile9+"/*step*");
+if(platitile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile9+"/"+tilers9[random(0,tilers9.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+}
+}
+}
+}
+void move_backward()
+{
+if(keyrowhold==1 and movetimer.elapsed>=movetime and moveable==true)
+{
+if(minz>=1)
+{
+if(miny>=0)
+{
+movetimer.restart();
+}
+if(miny==0)
+{
+string[] wallers1=find_files("sounds/objects/walls/"+walltile1+"/*wall*");
+if(platatile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile1+"/"+wallers1[random(0,wallers1.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers2=find_files("sounds/objects/walls/"+walltile2+"/*wall*");
+if(platbtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile2+"/"+wallers2[random(0,wallers2.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers3=find_files("sounds/objects/walls/"+walltile3+"/*wall*");
+if(platctile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile3+"/"+wallers3[random(0,wallers3.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers4=find_files("sounds/objects/walls/"+walltile4+"/*wall*");
+if(platdtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile4+"/"+wallers4[random(0,wallers4.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers5=find_files("sounds/objects/walls/"+walltile5+"/*wall*");
+if(platetile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile5+"/"+wallers5[random(0,wallers5.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers6=find_files("sounds/objects/walls/"+walltile6+"/*wall*");
+if(platftile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile6+"/"+wallers6[random(0,wallers6.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers7=find_files("sounds/objects/walls/"+walltile7+"/*wall*");
+if(platgtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile7+"/"+wallers7[random(0,wallers7.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers8=find_files("sounds/objects/walls/"+walltile8+"/*wall*");
+if(plathtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile8+"/"+wallers8[random(0,wallers8.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers9=find_files("sounds/objects/walls/"+walltile9+"/*wall*");
+if(platitile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile9+"/"+wallers9[random(0,wallers9.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+}
+else
+{
+miny-=1;
+}
+}
+if(minz==0)
+{
+if(miny>=0)
+{
+movetimer.restart();
+}
+if(miny==0)
+{
+string[] wallers1=find_files("sounds/objects/walls/"+walltile1+"/*wall*");
+if(platatile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile1+"/"+wallers1[random(0,wallers1.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers2=find_files("sounds/objects/walls/"+walltile2+"/*wall*");
+if(platbtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile2+"/"+wallers2[random(0,wallers2.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers3=find_files("sounds/objects/walls/"+walltile3+"/*wall*");
+if(platctile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile3+"/"+wallers3[random(0,wallers3.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers4=find_files("sounds/objects/walls/"+walltile4+"/*wall*");
+if(platdtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile4+"/"+wallers4[random(0,wallers4.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers5=find_files("sounds/objects/walls/"+walltile5+"/*wall*");
+if(platetile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile5+"/"+wallers5[random(0,wallers5.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers6=find_files("sounds/objects/walls/"+walltile6+"/*wall*");
+if(platftile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile6+"/"+wallers6[random(0,wallers6.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers7=find_files("sounds/objects/walls/"+walltile7+"/*wall*");
+if(platgtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile7+"/"+wallers7[random(0,wallers7.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers8=find_files("sounds/objects/walls/"+walltile8+"/*wall*");
+if(plathtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile8+"/"+wallers8[random(0,wallers8.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers9=find_files("sounds/objects/walls/"+walltile9+"/*wall*");
+if(platitile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile9+"/"+wallers9[random(0,wallers9.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+}
+else
+{
+miny-=1;
+string[] tilers1=find_files("sounds/objects/platforms/"+platile1+"/*step*");
+if(platatile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile1+"/"+tilers1[random(0,tilers1.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers2=find_files("sounds/objects/platforms/"+platile2+"/*step*");
+if(platbtile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile2+"/"+tilers2[random(0,tilers2.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers3=find_files("sounds/objects/platforms/"+platile3+"/*step*");
+if(platctile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile3+"/"+tilers3[random(0,tilers3.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers4=find_files("sounds/objects/platforms/"+platile4+"/*step*");
+if(platdtile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile4+"/"+tilers4[random(0,tilers4.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers5=find_files("sounds/objects/platforms/"+platile5+"/*step*");
+if(platetile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile5+"/"+tilers5[random(0,tilers5.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers6=find_files("sounds/objects/platforms/"+platile6+"/*step*");
+if(platftile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile6+"/"+tilers6[random(0,tilers6.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers7=find_files("sounds/objects/platforms/"+platile7+"/*step*");
+if(platgtile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile7+"/"+tilers7[random(0,tilers7.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers8=find_files("sounds/objects/platforms/"+platile8+"/*step*");
+if(plathtile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile8+"/"+tilers8[random(0,tilers8.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers9=find_files("sounds/objects/platforms/"+platile9+"/*step*");
+if(platitile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile9+"/"+tilers9[random(0,tilers9.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+}
+}
+}
+}
+void move_forward()
+{
+if(keyrowhold==1 and movetimer.elapsed>=movetime and moveable==true)
+{
+if(minz>=1)
+{
+if(miny<=maxy)
+{
+movetimer.restart();
+}
+if(miny==maxy)
+{
+string[] wallers1=find_files("sounds/objects/walls/"+walltile1+"/*wall*");
+if(platatile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile1+"/"+wallers1[random(0,wallers1.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers2=find_files("sounds/objects/walls/"+walltile2+"/*wall*");
+if(platbtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile2+"/"+wallers2[random(0,wallers2.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers3=find_files("sounds/objects/walls/"+walltile3+"/*wall*");
+if(platctile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile3+"/"+wallers3[random(0,wallers3.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers4=find_files("sounds/objects/walls/"+walltile4+"/*wall*");
+if(platdtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile4+"/"+wallers4[random(0,wallers4.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers5=find_files("sounds/objects/walls/"+walltile5+"/*wall*");
+if(platetile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile5+"/"+wallers5[random(0,wallers5.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers6=find_files("sounds/objects/walls/"+walltile6+"/*wall*");
+if(platftile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile6+"/"+wallers6[random(0,wallers6.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers7=find_files("sounds/objects/walls/"+walltile7+"/*wall*");
+if(platgtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile7+"/"+wallers7[random(0,wallers7.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers8=find_files("sounds/objects/walls/"+walltile8+"/*wall*");
+if(plathtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile8+"/"+wallers8[random(0,wallers8.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers9=find_files("sounds/objects/walls/"+walltile9+"/*wall*");
+if(platitile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile9+"/"+wallers9[random(0,wallers9.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+}
+else
+{
+miny+=1;
+}
+}
+if(minz==0)
+{
+if(miny<=maxy)
+{
+movetimer.restart();
+}
+if(miny==maxy)
+{
+string[] wallers1=find_files("sounds/objects/walls/"+walltile1+"/*wall*");
+if(platatile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile1+"/"+wallers1[random(0,wallers1.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers2=find_files("sounds/objects/walls/"+walltile2+"/*wall*");
+if(platbtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile2+"/"+wallers2[random(0,wallers2.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers3=find_files("sounds/objects/walls/"+walltile3+"/*wall*");
+if(platctile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile3+"/"+wallers3[random(0,wallers3.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers4=find_files("sounds/objects/walls/"+walltile4+"/*wall*");
+if(platdtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile4+"/"+wallers4[random(0,wallers4.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers5=find_files("sounds/objects/walls/"+walltile5+"/*wall*");
+if(platetile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile5+"/"+wallers5[random(0,wallers5.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers6=find_files("sounds/objects/walls/"+walltile6+"/*wall*");
+if(platftile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile6+"/"+wallers6[random(0,wallers6.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers7=find_files("sounds/objects/walls/"+walltile7+"/*wall*");
+if(platgtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile7+"/"+wallers7[random(0,wallers7.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers8=find_files("sounds/objects/walls/"+walltile8+"/*wall*");
+if(plathtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile8+"/"+wallers8[random(0,wallers8.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers9=find_files("sounds/objects/walls/"+walltile9+"/*wall*");
+if(platitile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile9+"/"+wallers9[random(0,wallers9.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+}
+else
+{
+miny+=1;
+string[] tilers1=find_files("sounds/objects/platforms/"+platile1+"/*step*");
+if(platatile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile1+"/"+tilers1[random(0,tilers1.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers2=find_files("sounds/objects/platforms/"+platile2+"/*step*");
+if(platbtile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile2+"/"+tilers2[random(0,tilers2.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers3=find_files("sounds/objects/platforms/"+platile3+"/*step*");
+if(platctile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile3+"/"+tilers3[random(0,tilers3.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers4=find_files("sounds/objects/platforms/"+platile4+"/*step*");
+if(platdtile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile4+"/"+tilers4[random(0,tilers4.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers5=find_files("sounds/objects/platforms/"+platile5+"/*step*");
+if(platetile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile5+"/"+tilers5[random(0,tilers5.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers6=find_files("sounds/objects/platforms/"+platile6+"/*step*");
+if(platftile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile6+"/"+tilers6[random(0,tilers6.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers7=find_files("sounds/objects/platforms/"+platile7+"/*step*");
+if(platgtile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile7+"/"+tilers7[random(0,tilers7.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers8=find_files("sounds/objects/platforms/"+platile8+"/*step*");
+if(plathtile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile8+"/"+tilers8[random(0,tilers8.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers9=find_files("sounds/objects/platforms/"+platile9+"/*step*");
+if(platitile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile9+"/"+tilers9[random(0,tilers9.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+}
+}
+}
+}
+void step_left()
+{
+if(keyrowhold==0 and moveable==true)
+{
+if(minz>=1)
+{
+if(minx==0)
+{
+string[] wallers1=find_files("sounds/objects/walls/"+walltile1+"/*wall*");
+if(platatile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile1+"/"+wallers1[random(0,wallers1.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers2=find_files("sounds/objects/walls/"+walltile2+"/*wall*");
+if(platbtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile2+"/"+wallers2[random(0,wallers2.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers3=find_files("sounds/objects/walls/"+walltile3+"/*wall*");
+if(platctile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile3+"/"+wallers3[random(0,wallers3.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers4=find_files("sounds/objects/walls/"+walltile4+"/*wall*");
+if(platdtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile4+"/"+wallers4[random(0,wallers4.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers5=find_files("sounds/objects/walls/"+walltile5+"/*wall*");
+if(platetile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile5+"/"+wallers5[random(0,wallers5.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers6=find_files("sounds/objects/walls/"+walltile6+"/*wall*");
+if(platftile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile6+"/"+wallers6[random(0,wallers6.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers7=find_files("sounds/objects/walls/"+walltile7+"/*wall*");
+if(platgtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile7+"/"+wallers7[random(0,wallers7.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers8=find_files("sounds/objects/walls/"+walltile8+"/*wall*");
+if(plathtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile8+"/"+wallers8[random(0,wallers8.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers9=find_files("sounds/objects/walls/"+walltile9+"/*wall*");
+if(platitile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile9+"/"+wallers9[random(0,wallers9.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+}
+else
+{
+minx-=1;
+}
+}
+if(minz==0)
+{
+if(minx==0)
+{
+string[] wallers1=find_files("sounds/objects/walls/"+walltile1+"/*wall*");
+if(platatile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile1+"/"+wallers1[random(0,wallers1.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers2=find_files("sounds/objects/walls/"+walltile2+"/*wall*");
+if(platbtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile2+"/"+wallers2[random(0,wallers2.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers3=find_files("sounds/objects/walls/"+walltile3+"/*wall*");
+if(platctile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile3+"/"+wallers3[random(0,wallers3.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers4=find_files("sounds/objects/walls/"+walltile4+"/*wall*");
+if(platdtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile4+"/"+wallers4[random(0,wallers4.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers5=find_files("sounds/objects/walls/"+walltile5+"/*wall*");
+if(platetile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile5+"/"+wallers5[random(0,wallers5.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers6=find_files("sounds/objects/walls/"+walltile6+"/*wall*");
+if(platftile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile6+"/"+wallers6[random(0,wallers6.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers7=find_files("sounds/objects/walls/"+walltile7+"/*wall*");
+if(platgtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile7+"/"+wallers7[random(0,wallers7.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers8=find_files("sounds/objects/walls/"+walltile8+"/*wall*");
+if(plathtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile8+"/"+wallers8[random(0,wallers8.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers9=find_files("sounds/objects/walls/"+walltile9+"/*wall*");
+if(platitile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile9+"/"+wallers9[random(0,wallers9.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+}
+else
+{
+minx-=1;
+string[] tilers1=find_files("sounds/objects/platforms/"+platile1+"/*step*");
+if(platatile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile1+"/"+tilers1[random(0,tilers1.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers2=find_files("sounds/objects/platforms/"+platile2+"/*step*");
+if(platbtile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile2+"/"+tilers2[random(0,tilers2.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers3=find_files("sounds/objects/platforms/"+platile3+"/*step*");
+if(platctile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile3+"/"+tilers3[random(0,tilers3.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers4=find_files("sounds/objects/platforms/"+platile4+"/*step*");
+if(platdtile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile4+"/"+tilers4[random(0,tilers4.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers5=find_files("sounds/objects/platforms/"+platile5+"/*step*");
+if(platetile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile5+"/"+tilers5[random(0,tilers5.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers6=find_files("sounds/objects/platforms/"+platile6+"/*step*");
+if(platftile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile6+"/"+tilers6[random(0,tilers6.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers7=find_files("sounds/objects/platforms/"+platile7+"/*step*");
+if(platgtile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile7+"/"+tilers7[random(0,tilers7.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers8=find_files("sounds/objects/platforms/"+platile8+"/*step*");
+if(plathtile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile8+"/"+tilers8[random(0,tilers8.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers9=find_files("sounds/objects/platforms/"+platile9+"/*step*");
+if(platitile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile9+"/"+tilers9[random(0,tilers9.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+}
+}
+}
+}
+void step_right()
+{
+if(keyrowhold==0 and moveable==true)
+{
+if(minz>=1)
+{
+if(minx==maxx)
+{
+string[] wallers1=find_files("sounds/objects/walls/"+walltile1+"/*wall*");
+if(platatile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile1+"/"+wallers1[random(0,wallers1.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers2=find_files("sounds/objects/walls/"+walltile2+"/*wall*");
+if(platbtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile2+"/"+wallers2[random(0,wallers2.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers3=find_files("sounds/objects/walls/"+walltile3+"/*wall*");
+if(platctile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile3+"/"+wallers3[random(0,wallers3.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers4=find_files("sounds/objects/walls/"+walltile4+"/*wall*");
+if(platdtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile4+"/"+wallers4[random(0,wallers4.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers5=find_files("sounds/objects/walls/"+walltile5+"/*wall*");
+if(platetile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile5+"/"+wallers5[random(0,wallers5.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers6=find_files("sounds/objects/walls/"+walltile6+"/*wall*");
+if(platftile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile6+"/"+wallers6[random(0,wallers6.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers7=find_files("sounds/objects/walls/"+walltile7+"/*wall*");
+if(platgtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile7+"/"+wallers7[random(0,wallers7.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers8=find_files("sounds/objects/walls/"+walltile8+"/*wall*");
+if(plathtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile8+"/"+wallers8[random(0,wallers8.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers9=find_files("sounds/objects/walls/"+walltile9+"/*wall*");
+if(platitile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile9+"/"+wallers9[random(0,wallers9.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+}
+else
+{
+minx+=1;
+}
+}
+if(minz==0)
+{
+if(minx==maxx)
+{
+string[] wallers1=find_files("sounds/objects/walls/"+walltile1+"/*wall*");
+if(platatile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile1+"/"+wallers1[random(0,wallers1.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers2=find_files("sounds/objects/walls/"+walltile2+"/*wall*");
+if(platbtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile2+"/"+wallers2[random(0,wallers2.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers3=find_files("sounds/objects/walls/"+walltile3+"/*wall*");
+if(platctile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile3+"/"+wallers3[random(0,wallers3.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers4=find_files("sounds/objects/walls/"+walltile4+"/*wall*");
+if(platdtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile4+"/"+wallers4[random(0,wallers4.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers5=find_files("sounds/objects/walls/"+walltile5+"/*wall*");
+if(platetile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile5+"/"+wallers5[random(0,wallers5.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers6=find_files("sounds/objects/walls/"+walltile6+"/*wall*");
+if(platftile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile6+"/"+wallers6[random(0,wallers6.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers7=find_files("sounds/objects/walls/"+walltile7+"/*wall*");
+if(platgtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile7+"/"+wallers7[random(0,wallers7.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers8=find_files("sounds/objects/walls/"+walltile8+"/*wall*");
+if(plathtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile8+"/"+wallers8[random(0,wallers8.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers9=find_files("sounds/objects/walls/"+walltile9+"/*wall*");
+if(platitile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile9+"/"+wallers9[random(0,wallers9.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+}
+else
+{
+minx+=1;
+string[] tilers1=find_files("sounds/objects/platforms/"+platile1+"/*step*");
+if(platatile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile1+"/"+tilers1[random(0,tilers1.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers2=find_files("sounds/objects/platforms/"+platile2+"/*step*");
+if(platbtile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile2+"/"+tilers2[random(0,tilers2.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers3=find_files("sounds/objects/platforms/"+platile3+"/*step*");
+if(platctile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile3+"/"+tilers3[random(0,tilers3.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers4=find_files("sounds/objects/platforms/"+platile4+"/*step*");
+if(platdtile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile4+"/"+tilers4[random(0,tilers4.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers5=find_files("sounds/objects/platforms/"+platile5+"/*step*");
+if(platetile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile5+"/"+tilers5[random(0,tilers5.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers6=find_files("sounds/objects/platforms/"+platile6+"/*step*");
+if(platftile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile6+"/"+tilers6[random(0,tilers6.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers7=find_files("sounds/objects/platforms/"+platile7+"/*step*");
+if(platgtile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile7+"/"+tilers7[random(0,tilers7.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers8=find_files("sounds/objects/platforms/"+platile8+"/*step*");
+if(plathtile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile8+"/"+tilers8[random(0,tilers8.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers9=find_files("sounds/objects/platforms/"+platile9+"/*step*");
+if(platitile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile9+"/"+tilers9[random(0,tilers9.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+}
+}
+}
+}
+void step_backward()
+{
+if(keyrowhold==0 and moveable==true)
+{
+if(minz>=1)
+{
+if(miny==0)
+{
+string[] wallers1=find_files("sounds/objects/walls/"+walltile1+"/*wall*");
+if(platatile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile1+"/"+wallers1[random(0,wallers1.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers2=find_files("sounds/objects/walls/"+walltile2+"/*wall*");
+if(platbtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile2+"/"+wallers2[random(0,wallers2.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers3=find_files("sounds/objects/walls/"+walltile3+"/*wall*");
+if(platctile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile3+"/"+wallers3[random(0,wallers3.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers4=find_files("sounds/objects/walls/"+walltile4+"/*wall*");
+if(platdtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile4+"/"+wallers4[random(0,wallers4.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers5=find_files("sounds/objects/walls/"+walltile5+"/*wall*");
+if(platetile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile5+"/"+wallers5[random(0,wallers5.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers6=find_files("sounds/objects/walls/"+walltile6+"/*wall*");
+if(platftile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile6+"/"+wallers6[random(0,wallers6.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers7=find_files("sounds/objects/walls/"+walltile7+"/*wall*");
+if(platgtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile7+"/"+wallers7[random(0,wallers7.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers8=find_files("sounds/objects/walls/"+walltile8+"/*wall*");
+if(plathtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile8+"/"+wallers8[random(0,wallers8.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers9=find_files("sounds/objects/walls/"+walltile9+"/*wall*");
+if(platitile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile9+"/"+wallers9[random(0,wallers9.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+}
+else
+{
+miny-=1;
+}
+}
+if(minz==0)
+{
+if(miny==0)
+{
+string[] wallers1=find_files("sounds/objects/walls/"+walltile1+"/*wall*");
+if(platatile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile1+"/"+wallers1[random(0,wallers1.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers2=find_files("sounds/objects/walls/"+walltile2+"/*wall*");
+if(platbtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile2+"/"+wallers2[random(0,wallers2.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers3=find_files("sounds/objects/walls/"+walltile3+"/*wall*");
+if(platctile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile3+"/"+wallers3[random(0,wallers3.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers4=find_files("sounds/objects/walls/"+walltile4+"/*wall*");
+if(platdtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile4+"/"+wallers4[random(0,wallers4.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers5=find_files("sounds/objects/walls/"+walltile5+"/*wall*");
+if(platetile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile5+"/"+wallers5[random(0,wallers5.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers6=find_files("sounds/objects/walls/"+walltile6+"/*wall*");
+if(platftile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile6+"/"+wallers6[random(0,wallers6.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers7=find_files("sounds/objects/walls/"+walltile7+"/*wall*");
+if(platgtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile7+"/"+wallers7[random(0,wallers7.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers8=find_files("sounds/objects/walls/"+walltile8+"/*wall*");
+if(plathtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile8+"/"+wallers8[random(0,wallers8.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers9=find_files("sounds/objects/walls/"+walltile9+"/*wall*");
+if(platitile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile9+"/"+wallers9[random(0,wallers9.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+}
+else
+{
+miny-=1;
+string[] tilers1=find_files("sounds/objects/platforms/"+platile1+"/*step*");
+if(platatile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile1+"/"+tilers1[random(0,tilers1.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers2=find_files("sounds/objects/platforms/"+platile2+"/*step*");
+if(platbtile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile2+"/"+tilers2[random(0,tilers2.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers3=find_files("sounds/objects/platforms/"+platile3+"/*step*");
+if(platctile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile3+"/"+tilers3[random(0,tilers3.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers4=find_files("sounds/objects/platforms/"+platile4+"/*step*");
+if(platdtile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile4+"/"+tilers4[random(0,tilers4.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers5=find_files("sounds/objects/platforms/"+platile5+"/*step*");
+if(platetile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile5+"/"+tilers5[random(0,tilers5.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers6=find_files("sounds/objects/platforms/"+platile6+"/*step*");
+if(platftile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile6+"/"+tilers6[random(0,tilers6.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers7=find_files("sounds/objects/platforms/"+platile7+"/*step*");
+if(platgtile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile7+"/"+tilers7[random(0,tilers7.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers8=find_files("sounds/objects/platforms/"+platile8+"/*step*");
+if(plathtile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile8+"/"+tilers8[random(0,tilers8.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers9=find_files("sounds/objects/platforms/"+platile9+"/*step*");
+if(platitile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile9+"/"+tilers9[random(0,tilers9.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+}
+}
+}
+}
+void step_forward()
+{
+if(keyrowhold==0 and moveable==true)
+{
+if(minz>=1)
+{
+if(miny==maxy)
+{
+string[] wallers1=find_files("sounds/objects/walls/"+walltile1+"/*wall*");
+if(platatile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile1+"/"+wallers1[random(0,wallers1.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers2=find_files("sounds/objects/walls/"+walltile2+"/*wall*");
+if(platbtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile2+"/"+wallers2[random(0,wallers2.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers3=find_files("sounds/objects/walls/"+walltile3+"/*wall*");
+if(platctile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile3+"/"+wallers3[random(0,wallers3.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers4=find_files("sounds/objects/walls/"+walltile4+"/*wall*");
+if(platdtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile4+"/"+wallers4[random(0,wallers4.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers5=find_files("sounds/objects/walls/"+walltile5+"/*wall*");
+if(platetile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile5+"/"+wallers5[random(0,wallers5.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers6=find_files("sounds/objects/walls/"+walltile6+"/*wall*");
+if(platftile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile6+"/"+wallers6[random(0,wallers6.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers7=find_files("sounds/objects/walls/"+walltile7+"/*wall*");
+if(platgtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile7+"/"+wallers7[random(0,wallers7.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers8=find_files("sounds/objects/walls/"+walltile8+"/*wall*");
+if(plathtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile8+"/"+wallers8[random(0,wallers8.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers9=find_files("sounds/objects/walls/"+walltile9+"/*wall*");
+if(platitile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile9+"/"+wallers9[random(0,wallers9.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+}
+else
+{
+miny+=1;
+}
+}
+if(minz==0)
+{
+if(miny==maxy)
+{
+string[] wallers1=find_files("sounds/objects/walls/"+walltile1+"/*wall*");
+if(platatile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile1+"/"+wallers1[random(0,wallers1.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers2=find_files("sounds/objects/walls/"+walltile2+"/*wall*");
+if(platbtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile2+"/"+wallers2[random(0,wallers2.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers3=find_files("sounds/objects/walls/"+walltile3+"/*wall*");
+if(platctile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile3+"/"+wallers3[random(0,wallers3.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers4=find_files("sounds/objects/walls/"+walltile4+"/*wall*");
+if(platdtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile4+"/"+wallers4[random(0,wallers4.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers5=find_files("sounds/objects/walls/"+walltile5+"/*wall*");
+if(platetile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile5+"/"+wallers5[random(0,wallers5.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers6=find_files("sounds/objects/walls/"+walltile6+"/*wall*");
+if(platftile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile6+"/"+wallers6[random(0,wallers6.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers7=find_files("sounds/objects/walls/"+walltile7+"/*wall*");
+if(platgtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile7+"/"+wallers7[random(0,wallers7.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers8=find_files("sounds/objects/walls/"+walltile8+"/*wall*");
+if(plathtile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile8+"/"+wallers8[random(0,wallers8.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] wallers9=find_files("sounds/objects/walls/"+walltile9+"/*wall*");
+if(platitile==1) platslot=pool.play_stationary("sounds/objects/walls/"+walltile9+"/"+wallers9[random(0,wallers9.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+}
+else
+{
+miny+=1;
+string[] tilers1=find_files("sounds/objects/platforms/"+platile1+"/*step*");
+if(platatile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile1+"/"+tilers1[random(0,tilers1.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers2=find_files("sounds/objects/platforms/"+platile2+"/*step*");
+if(platbtile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile2+"/"+tilers2[random(0,tilers2.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers3=find_files("sounds/objects/platforms/"+platile3+"/*step*");
+if(platctile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile3+"/"+tilers3[random(0,tilers3.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers4=find_files("sounds/objects/platforms/"+platile4+"/*step*");
+if(platdtile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile4+"/"+tilers4[random(0,tilers4.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers5=find_files("sounds/objects/platforms/"+platile5+"/*step*");
+if(platetile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile5+"/"+tilers5[random(0,tilers5.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers6=find_files("sounds/objects/platforms/"+platile6+"/*step*");
+if(platftile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile6+"/"+tilers6[random(0,tilers6.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers7=find_files("sounds/objects/platforms/"+platile7+"/*step*");
+if(platgtile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile7+"/"+tilers7[random(0,tilers7.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers8=find_files("sounds/objects/platforms/"+platile8+"/*step*");
+if(plathtile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile8+"/"+tilers8[random(0,tilers8.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+string[] tilers9=find_files("sounds/objects/platforms/"+platile9+"/*step*");
+if(platitile==1) platslot=pool.play_stationary("sounds/objects/platforms/"+platile9+"/"+tilers9[random(0,tilers9.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+}
+}
+}
+}

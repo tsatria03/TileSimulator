@@ -1,0 +1,560 @@
+void rotate_left()
+{
+if(keyrowhold==1 and turntimer.elapsed>=turntime and turnable==true)
+{
+if(spokenturns==1)
+{
+if(degrees==0 and direction=="north")
+{
+degrees=315;
+direction="northwest";
+speak(direction+","+degrees+"degrees");
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+turntimer.restart();
+}
+else if(degrees==315 and direction=="northwest")
+{
+degrees=270;
+direction="west";
+speak(direction+","+degrees+"degrees");
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+turntimer.restart();
+}
+else if(degrees==270 and direction=="west")
+{
+degrees=225;
+direction="southwest";
+speak(direction+","+degrees+"degrees");
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+turntimer.restart();
+}
+else if(degrees==225 and direction=="southwest")
+{
+degrees=180;
+direction="south";
+speak(direction+","+degrees+"degrees");
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+turntimer.restart();
+}
+else if(degrees==180 and direction=="south")
+{
+degrees=135;
+direction="southeast";
+speak(direction+","+degrees+"degrees");
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+turntimer.restart();
+}
+else if(degrees==135 and direction=="southeast")
+{
+degrees=90;
+direction="east";
+speak(direction+","+degrees+"degrees");
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+turntimer.restart();
+}
+else if(degrees==90 and direction=="east")
+{
+degrees=45;
+direction="northeast";
+speak(direction+","+degrees+"degrees");
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+turntimer.restart();
+}
+else
+{
+degrees=0;
+direction="north";
+speak(direction+","+degrees+"degrees");
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+turntimer.restart();
+}
+}
+else if(spokenturns==0)
+{
+if(degrees==0 and direction=="north")
+{
+degrees=315;
+direction="northwest";
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+turntimer.restart();
+}
+else if(degrees==315 and direction=="northwest")
+{
+degrees=270;
+direction="west";
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+turntimer.restart();
+}
+else if(degrees==270 and direction=="west")
+{
+degrees=225;
+direction="southwest";
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+turntimer.restart();
+}
+else if(degrees==225 and direction=="southwest")
+{
+degrees=180;
+direction="south";
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+turntimer.restart();
+}
+else if(degrees==180 and direction=="south")
+{
+degrees=135;
+direction="southeast";
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+turntimer.restart();
+}
+else if(degrees==135 and direction=="southeast")
+{
+degrees=90;
+direction="east";
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+turntimer.restart();
+}
+else if(degrees==90 and direction=="east")
+{
+degrees=45;
+direction="northeast";
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+turntimer.restart();
+}
+else
+{
+degrees=0;
+direction="north";
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+turntimer.restart();
+}
+}
+}
+}
+void rotate_right()
+{
+if(keyrowhold==1 and turntimer.elapsed>=turntime and turnable==true)
+{
+if(spokenturns==1)
+{
+if(degrees==0 and direction=="north")
+{
+degrees=45;
+direction="northeast";
+speak(direction+","+degrees+"degrees");
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+turntimer.restart();
+}
+else if(degrees==45 and direction=="northeast")
+{
+degrees=90;
+direction="east";
+speak(direction+","+degrees+"degrees");
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+turntimer.restart();
+}
+else if(degrees==90 and direction=="east")
+{
+degrees=135;
+direction="southeast";
+speak(direction+","+degrees+"degrees");
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+turntimer.restart();
+}
+else if(degrees==135 and direction=="southeast")
+{
+degrees=180;
+direction="south";
+speak(direction+","+degrees+"degrees");
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+turntimer.restart();
+}
+else if(degrees==180 and direction=="south")
+{
+degrees=225;
+direction="southwest";
+speak(direction+","+degrees+"degrees");
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+turntimer.restart();
+}
+else if(degrees==225 and direction=="southwest")
+{
+degrees=270;
+direction="west";
+speak(direction+","+degrees+"degrees");
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+turntimer.restart();
+}
+else if(degrees==270 and direction=="west")
+{
+degrees=315;
+direction="northwest";
+speak(direction+","+degrees+"degrees");
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+turntimer.restart();
+}
+else
+{
+degrees=0;
+direction="north";
+speak(direction+","+degrees+"degrees");
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+turntimer.restart();
+}
+}
+else if(spokenturns==0)
+{
+if(degrees==0 and direction=="north")
+{
+degrees=45;
+direction="northeast";
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+turntimer.restart();
+}
+else if(degrees==45 and direction=="northeast")
+{
+degrees=90;
+direction="east";
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+turntimer.restart();
+}
+else if(degrees==90 and direction=="east")
+{
+degrees=135;
+direction="southeast";
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+turntimer.restart();
+}
+else if(degrees==135 and direction=="southeast")
+{
+degrees=180;
+direction="south";
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+turntimer.restart();
+}
+else if(degrees==180 and direction=="south")
+{
+degrees=225;
+direction="southwest";
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+turntimer.restart();
+}
+else if(degrees==225 and direction=="southwest")
+{
+degrees=270;
+direction="west";
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+turntimer.restart();
+}
+else if(degrees==270 and direction=="west")
+{
+degrees=315;
+direction="northwest";
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+turntimer.restart();
+}
+else
+{
+degrees=0;
+direction="north";
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+turntimer.restart();
+}
+}
+}
+}
+void turn_left()
+{
+if(keyrowhold==0 and turnable==true)
+{
+if(spokenturns==1)
+{
+if(degrees==0 and direction=="north")
+{
+degrees=315;
+direction="northwest";
+speak(direction+","+degrees+"degrees");
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+}
+else if(degrees==315 and direction=="northwest")
+{
+degrees=270;
+direction="west";
+speak(direction+","+degrees+"degrees");
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+}
+else if(degrees==270 and direction=="west")
+{
+degrees=225;
+direction="southwest";
+speak(direction+","+degrees+"degrees");
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+}
+else if(degrees==225 and direction=="southwest")
+{
+degrees=180;
+direction="south";
+speak(direction+","+degrees+"degrees");
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+}
+else if(degrees==180 and direction=="south")
+{
+degrees=135;
+direction="southeast";
+speak(direction+","+degrees+"degrees");
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+}
+else if(degrees==135 and direction=="southeast")
+{
+degrees=90;
+direction="east";
+speak(direction+","+degrees+"degrees");
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+}
+else if(degrees==90 and direction=="east")
+{
+degrees=45;
+direction="northeast";
+speak(direction+","+degrees+"degrees");
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+}
+else
+{
+degrees=0;
+direction="north";
+speak(direction+","+degrees+"degrees");
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+}
+}
+else if(spokenturns==0)
+{
+if(degrees==0 and direction=="north")
+{
+degrees=315;
+direction="northwest";
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+}
+else if(degrees==315 and direction=="northwest")
+{
+degrees=270;
+direction="west";
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+}
+else if(degrees==270 and direction=="west")
+{
+degrees=225;
+direction="southwest";
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+}
+else if(degrees==225 and direction=="southwest")
+{
+degrees=180;
+direction="south";
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+}
+else if(degrees==180 and direction=="south")
+{
+degrees=135;
+direction="southeast";
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+}
+else if(degrees==135 and direction=="southeast")
+{
+degrees=90;
+direction="east";
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+}
+else if(degrees==90 and direction=="east")
+{
+degrees=45;
+direction="northeast";
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+}
+else
+{
+degrees=0;
+direction="north";
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+}
+}
+}
+}
+void turn_right()
+{
+if(keyrowhold==0 and turnable==true)
+{
+if(spokenturns==1)
+{
+if(degrees==0 and direction=="north")
+{
+degrees=45;
+direction="northeast";
+speak(direction+","+degrees+"degrees");
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+}
+else if(degrees==45 and direction=="northeast")
+{
+degrees=90;
+direction="east";
+speak(direction+","+degrees+"degrees");
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+}
+else if(degrees==90 and direction=="east")
+{
+degrees=135;
+direction="southeast";
+speak(direction+","+degrees+"degrees");
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+}
+else if(degrees==135 and direction=="southeast")
+{
+degrees=180;
+direction="south";
+speak(direction+","+degrees+"degrees");
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+}
+else if(degrees==180 and direction=="south")
+{
+degrees=225;
+direction="southwest";
+speak(direction+","+degrees+"degrees");
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+}
+else if(degrees==225 and direction=="southwest")
+{
+degrees=270;
+direction="west";
+speak(direction+","+degrees+"degrees");
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+}
+else if(degrees==270 and direction=="west")
+{
+degrees=315;
+direction="northwest";
+speak(direction+","+degrees+"degrees");
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+}
+else
+{
+degrees=0;
+direction="north";
+speak(direction+","+degrees+"degrees");
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+}
+}
+else if(spokenturns==0)
+{
+if(degrees==0 and direction=="north")
+{
+degrees=45;
+direction="northeast";
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+}
+else if(degrees==45 and direction=="northeast")
+{
+degrees=90;
+direction="east";
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+}
+else if(degrees==90 and direction=="east")
+{
+degrees=135;
+direction="southeast";
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+}
+else if(degrees==135 and direction=="southeast")
+{
+degrees=180;
+direction="south";
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+}
+else if(degrees==180 and direction=="south")
+{
+degrees=225;
+direction="southwest";
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+}
+else if(degrees==225 and direction=="southwest")
+{
+degrees=270;
+direction="west";
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+}
+else if(degrees==270 and direction=="west")
+{
+degrees=315;
+direction="northwest";
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+}
+else
+{
+degrees=0;
+direction="north";
+string[] turnsfx=find_files("sounds/characters/turns/"+turntype+"/*turn*");
+if(turnsound==1) pool.play_stationary("sounds/characters/turns/"+turntype+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+}
+}
+}
+}
