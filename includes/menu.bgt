@@ -1,8 +1,8 @@
 void mainmenu()
 {
 setupmenu(true);
+m.add_item_tts("app menu", "step");
 m.add_item_tts("documentation menu", "help");
-m.add_item_tts("game menu", "step");
 m.add_item_tts("settings menu", "settings");
 m.add_item_tts("test speakers", "st");
 m.add_item_tts("restart", "rx");
@@ -385,7 +385,7 @@ setupmenu(true);
 m.add_item_tts("play", "step");
 m.add_item_tts("settings", "set");
 m.add_item_tts("back", "back");
-int mres=m.run("game menu",true);
+int mres=m.run("App menu",true);
 string gamem=m.get_item_name(mres);
 if(mres==0)
 {
@@ -427,4 +427,784 @@ if(gamepm=="back")
 {
 gamemenu();
 }
+}
+
+void cheatsmenu()
+{
+setupmenu(true);
+m.music.volume=-100;
+m.add_item_tts("tile1 surface,"+"currently set to;"+platile1, "plat1");
+m.add_item_tts("tile2 surface,"+"currently set to;"+platile2, "plat2");
+m.add_item_tts("tile3 surface,"+"currently set to;"+platile3, "plat3");
+m.add_item_tts("tile4 surface,"+"currently set to;"+platile4, "plat4");
+m.add_item_tts("tile5 surface,"+"currently set to;"+platile5, "plat5");
+m.add_item_tts("tile6 surface,"+"currently set to;"+platile6, "plat6");
+m.add_item_tts("tile7 surface,"+"currently set to;"+platile7, "plat7");
+m.add_item_tts("tile8 surface,"+"currently set to;"+platile8, "plat8");
+m.add_item_tts("tile9 surface,"+"currently set to;"+platile9, "plat9");
+m.add_item_tts("tile volume,"+"currently set to;"+tilevolume, "stecibel");
+m.add_item_tts("tile pan,"+"currently set to;"+tilepan, "stalance");
+m.add_item_tts("tile pitch,"+"currently set to;"+tilepitch, "stemitone");
+m.add_item_tts("wall1 surface,"+"currently set to;"+walltile1, "wall1");
+m.add_item_tts("wall2 surface,"+"currently set to;"+walltile2, "wall2");
+m.add_item_tts("wall3 surface,"+"currently set to;"+walltile3, "wall3");
+m.add_item_tts("wall4 surface,"+"currently set to;"+walltile4, "wall4");
+m.add_item_tts("wall5 surface,"+"currently set to;"+walltile5, "wall5");
+m.add_item_tts("wall6 surface,"+"currently set to;"+walltile6, "wall6");
+m.add_item_tts("wall7 surface,"+"currently set to;"+walltile7, "wall7");
+m.add_item_tts("wall8 surface,"+"currently set to;"+walltile8, "wall8");
+m.add_item_tts("wall9 surface,"+"currently set to;"+walltile9, "wall9");
+m.add_item_tts("jump height,"+"currently set to;"+jumpheight, "jph");
+m.add_item_tts("moving speed,"+"currently set to;"+modspeed, "movespeed");
+m.add_item_tts("x position,"+"currently set to;"+minx, "posx");
+m.add_item_tts("y position,"+"currently set to;"+miny, "posy");
+m.add_item_tts("z position,"+"currently set to;"+minz, "posz");
+m.add_item_tts("back", "back");
+int mres=m.run("Cheats menu",true);
+string tilems=m.get_item_name(mres);
+if(mres==0)
+{
+speak("canceled");
+return;
+}
+if(tilems=="plat1")
+{
+string tiletype1=v.input("What would you like the tile1 surface to be set to?",false,"carpet");
+if(platile1=="")
+return;
+speak("surface set");
+platile1=string_to_lower_case(tiletype1);
+}
+if(tilems=="plat2")
+{
+string tiletype2=v.input("What would you like the tile2 surface to be set to?",false,"carpet");
+if(platile2=="")
+return;
+speak("surface set");
+platile2=string_to_lower_case(tiletype2);
+}
+if(tilems=="plat3")
+{
+string tiletype3=v.input("What would you like the tile3 surface to be set to?",false,"carpet");
+if(platile3=="")
+return;
+speak("surface set");
+platile3=string_to_lower_case(tiletype3);
+}
+if(tilems=="plat4")
+{
+string tiletype4=v.input("What would you like the tile4 surface to be set to?",false,"carpet");
+if(platile4=="")
+return;
+speak("surface set");
+platile4=string_to_lower_case(tiletype4);
+}
+if(tilems=="plat5")
+{
+string tiletype5=v.input("What would you like the tile5 surface to be set to?",false,"carpet");
+if(platile5=="")
+return;
+speak("surface set");
+platile5=string_to_lower_case(tiletype5);
+}
+if(tilems=="plat6")
+{
+string tiletype6=v.input("What would you like the tile6 surface to be set to?",false,"carpet");
+if(platile6=="")
+return;
+speak("surface set");
+platile6=string_to_lower_case(tiletype6);
+}
+if(tilems=="plat7")
+{
+string tiletype7=v.input("What would you like the tile7 surface to be set to?",false,"carpet");
+if(platile7=="")
+return;
+speak("surface set");
+platile7=string_to_lower_case(tiletype7);
+}
+if(tilems=="plat8")
+{
+string tiletype8=v.input("What would you like the tile8 surface to be set to?",false,"carpet");
+if(platile8=="")
+return;
+speak("surface set");
+platile8=string_to_lower_case(tiletype8);
+}
+if(tilems=="plat9")
+{
+string tiletype9=v.input("What would you like the tile9 surface to be set to?",false,"carpet");
+if(platile9=="")
+return;
+speak("surface set");
+platile9=string_to_lower_case(tiletype9);
+}
+if(tilems=="wall1")
+{
+string walltype1=v.input("What would you like the wall1 surface to be set to?",false,"metal15");
+if(walltile1=="")
+return;
+speak("wall set");
+walltile1=string_to_lower_case(walltype1);
+}
+if(tilems=="wall2")
+{
+string walltype2=v.input("What would you like the wall2 surface to be set to?",false,"metal15");
+if(walltile2=="")
+return;
+speak("wall set");
+walltile2=string_to_lower_case(walltype2);
+}
+if(tilems=="wall3")
+{
+string walltype3=v.input("What would you like the wall3 surface to be set to?",false,"metal15");
+if(walltile3=="")
+return;
+speak("wall set");
+walltile3=string_to_lower_case(walltype3);
+}
+if(tilems=="wall4")
+{
+string walltype4=v.input("What would you like the wall4 surface to be set to?",false,"metal15");
+if(walltile4=="")
+return;
+speak("wall set");
+walltile4=string_to_lower_case(walltype4);
+}
+if(tilems=="wall5")
+{
+string walltype5=v.input("What would you like the wall5 surface to be set to?",false,"metal15");
+if(walltile5=="")
+return;
+speak("wall set");
+walltile5=string_to_lower_case(walltype5);
+}
+if(tilems=="wall6")
+{
+string walltype6=v.input("What would you like the wall6 surface to be set to?",false,"metal15");
+if(walltile6=="")
+return;
+speak("wall set");
+walltile6=string_to_lower_case(walltype6);
+}
+if(tilems=="wall7")
+{
+string walltype7=v.input("What would you like the wall7 surface to be set to?",false,"metal15");
+if(walltile7=="")
+return;
+speak("wall set");
+walltile7=string_to_lower_case(walltype7);
+}
+if(tilems=="wall8")
+{
+string walltype8=v.input("What would you like the wall8 surface to be set to?",false,"metal15");
+if(walltile8=="")
+return;
+speak("wall set");
+walltile8=string_to_lower_case(walltype8);
+}
+if(tilems=="wall9")
+{
+string walltype9=v.input("What would you like the wall9 surface to be set to?",false,"metal15");
+if(walltile9=="")
+return;
+speak("wall set");
+walltile9=string_to_lower_case(walltype9);
+}
+if(tilems=="stecibel")
+{
+string tilevol=input.input("What would you like the tile volume to be set to?","0");
+if(tilevolume=="")
+return;
+speak("tile volume set");
+tilevolume=string_to_number(tilevol);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+}
+if(tilems=="stalance")
+{
+string tilpan=input.input("What would you like the tile pan to be set to?","0");
+if(tilepan=="")
+return;
+speak("tile pan set");
+tilepan=string_to_number(tilpan);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+}
+if(tilems=="stemitone")
+{
+string tilpitch=input.input("What would you like the tile pitch to be set to?","100");
+if(tilepitch=="")
+return;
+speak("tile pitch set");
+tilepitch=string_to_number(tilpitch);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+}
+if(tilems=="movespeed")
+{
+string speedwalk=input.input("What would you like the moving speed to be set to?","4");
+if(modspeed=="")
+return;
+speak("moving speed set");
+modspeed=string_to_number(speedwalk);
+}
+if(tilems=="posx")
+{
+string pox=input.input("What would you like the x position to be set to?","50");
+if(minx=="")
+return;
+speak("x position set");
+minx=string_to_number(pox);
+}
+if(tilems=="posy")
+{
+string poy=input.input("What would you like the y position to be set to?","50");
+if(miny=="")
+return;
+speak("y position set");
+miny=string_to_number(poy);
+}
+if(tilems=="posz")
+{
+string poz=input.input("What would you like the z position to be set to?","0");
+if(minz=="")
+return;
+speak("z position set");
+minz=string_to_number(poz);
+}
+if(tilems=="jph")
+{
+string airheight=input.input("What would you like the jump height to be set to?","5");
+if(jumpheight=="")
+return;
+speak("jump height set");
+jumpheight=string_to_number(airheight);
+}
+if(tilems=="back")
+{
+return;
+}
+}
+void objmenu()
+{
+setupmenu(true);
+m.music.volume=-100;
+m.add_item_tts("borders", "bord");
+m.add_item_tts("characters", "char");
+m.add_item_tts("surfaces", "surf");
+m.add_item_tts("back", "back");
+int mres=m.run("Objects menu",true);
+string objm=m.get_item_name(mres);
+if(mres==0)
+{
+speak("canceled");
+return;
+}
+if(objm=="bord")
+{
+bordsetmenu();
+}
+if(objm=="char")
+{
+charsetmenu();
+}
+if(objm=="surf")
+{
+surfsetmenu();
+}
+if(objm=="back")
+{
+return;
+}
+}
+void bordsetmenu()
+{
+setupmenu(true);
+m.music.volume=-100;
+m.add_item_tts("Wall slot1,"+"currrently set to;"+walltile1, "walleplata");
+m.add_item_tts("Wall slot2,"+"currently set to;"+walltile2, "walleplatb");
+m.add_item_tts("Wall slot3,"+"currently set to;"+walltile3, "walleplatc");
+m.add_item_tts("Wall slot4,"+"currently set to;"+walltile4, "walleplatd");
+m.add_item_tts("Wall slot5,"+"currently set to;"+walltile5, "walleplate");
+m.add_item_tts("Wall slot6,"+"currently set to;"+walltile6, "walleplatf");
+m.add_item_tts("Wall slot7,"+"currently set to;"+walltile7, "walleplatg");
+m.add_item_tts("Wall slot8,"+"currently set to;"+walltile8, "walleplath");
+m.add_item_tts("Wall slot9,"+"currently set to;"+walltile9, "walleplati");
+m.add_item_tts("back", "back");
+int mres=m.run("borders menu",true);
+string wlm=m.get_item_name(mres);
+if(mres==0)
+{
+objmenu();
+}
+if(wlm=="walleplata")
+{
+string res=wallsmenu();
+if(res!="")
+{
+walltile1=res;
+}
+}
+if(wlm=="walleplatb")
+{
+string res=wallsmenu();
+if(res!="")
+{
+walltile2=res;
+}
+}
+if(wlm=="walleplatc")
+{
+string res=wallsmenu();
+if(res!="")
+{
+walltile3=res;
+}
+}
+if(wlm=="walleplatd")
+{
+string res=wallsmenu();
+if(res!="")
+{
+walltile4=res;
+}
+}
+if(wlm=="walleplate")
+{
+string res=wallsmenu();
+if(res!="")
+{
+walltile5=res;
+}
+}
+if(wlm=="walleplatf")
+{
+string res=wallsmenu();
+if(res!="")
+{
+walltile6=res;
+}
+}
+if(wlm=="walleplatg")
+{
+string res=wallsmenu();
+if(res!="")
+{
+walltile7=res;
+}
+}
+if(wlm=="walleplath")
+{
+string res=wallsmenu();
+if(res!="")
+{
+walltile8=res;
+}
+}
+if(wlm=="walleplati")
+{
+string res=wallsmenu();
+if(res!="")
+{
+walltile9=res;
+}
+}
+if(wlm=="back")
+{
+objmenu();
+}
+}
+void charsetmenu()
+{
+setupmenu(true);
+m.music.volume=-100;
+m.add_item_tts("jump sound,"+"currrently set to;"+jumptype, "jps");
+m.add_item_tts("turn sound,"+"currrently set to;"+turntype, "trs");
+m.add_item_tts("back", "back");
+int mres=m.run("Characters menu",true);
+string clm=m.get_item_name(mres);
+if(mres==0)
+{
+objmenu();
+}
+if(clm=="jps")
+{
+string res=jumpsmenu();
+if(res!="")
+{
+jumptype=res;
+}
+}
+if(clm=="trs")
+{
+string res=turnsmenu();
+if(res!="")
+{
+turntype=res;
+}
+}
+if(clm=="back")
+{
+objmenu();
+}
+}
+void surfsetmenu()
+{
+setupmenu(true);
+m.music.volume=-100;
+m.add_item_tts("Tile slot1,"+"currrently set to;"+platile1, "tileplata");
+m.add_item_tts("Tile slot2,"+"currently set to;"+platile2, "tileplatb");
+m.add_item_tts("Tile slot3,"+"currently set to;"+platile3, "tileplatc");
+m.add_item_tts("Tile slot4,"+"currently set to;"+platile4, "tileplatd");
+m.add_item_tts("Tile slot5,"+"currently set to;"+platile5, "tileplate");
+m.add_item_tts("Tile slot6,"+"currently set to;"+platile6, "tileplatf");
+m.add_item_tts("Tile slot7,"+"currently set to;"+platile7, "tileplatg");
+m.add_item_tts("Tile slot8,"+"currently set to;"+platile8, "tileplath");
+m.add_item_tts("Tile slot9,"+"currently set to;"+platile9, "tileplati");
+m.add_item_tts("back", "back");
+int mres=m.run("Surfaces menu",true);
+string plm=m.get_item_name(mres);
+if(mres==0)
+{
+objmenu();
+}
+if(plm=="tileplata")
+{
+string res=platsmenu();
+if(res!="")
+{
+platile1=res;
+}
+}
+if(plm=="tileplatb")
+{
+string res=platsmenu();
+if(res!="")
+{
+platile2=res;
+}
+}
+if(plm=="tileplatc")
+{
+string res=platsmenu();
+if(res!="")
+{
+platile3=res;
+}
+}
+if(plm=="tileplatd")
+{
+string res=platsmenu();
+if(res!="")
+{
+platile4=res;
+}
+}
+if(plm=="tileplate")
+{
+string res=platsmenu();
+if(res!="")
+{
+platile5=res;
+}
+}
+if(plm=="tileplatf")
+{
+string res=platsmenu();
+if(res!="")
+{
+platile6=res;
+}
+}
+if(plm=="tileplatg")
+{
+string res=platsmenu();
+if(res!="")
+{
+platile7=res;
+}
+}
+if(plm=="tileplath")
+{
+string res=platsmenu();
+if(res!="")
+{
+platile8=res;
+}
+}
+if(plm=="tileplati")
+{
+string res=platsmenu();
+if(res!="")
+{
+platile9=res;
+}
+}
+if(plm=="back")
+{
+objmenu();
+}
+}
+string platsmenu()
+{
+string[] plats=find_directories("sounds/objects/platforms/*");
+setupmenu(true);
+m.music.volume=-100;
+m.set_callback(@steps_callback,"");
+for (uint i=0; i<plats.length(); i++)
+{
+m.add_item_tts(plats[i],plats[i],"",true);
+}
+int mres=m.run("Tiles menu", true);
+if(mres==0)
+{
+surfsetmenu();
+}
+if(mres>0 and mres<=plats.length())
+{
+speak("tile set");
+}
+return m.get_item_name(mres);
+}
+int steps_callback(dynamic_menu_pro@ m, string data)
+{
+string platile1;
+if(m.menu_position>0)
+platile1=m.item_list[m.menu_position-1].name;
+if(key_down(KEY_SPACE) and m.menu_position>0 and spacehold==1 and keytimer.elapsed>=keytime)
+{
+string[] tilers=find_files("sounds/objects/platforms/"+platile1+"/*step*");
+platslot=pool.play_stationary("sounds/objects/platforms/"+platile1+"/"+tilers[random(0,tilers.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+keytimer.restart();
+}
+if(key_pressed(KEY_SPACE) and m.menu_position>0 and spacehold==0)
+{
+string[] tilers=find_files("sounds/objects/platforms/"+platile1+"/*step*");
+platslot=pool.play_stationary("sounds/objects/platforms/"+platile1+"/"+tilers[random(0,tilers.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+}
+if(key_down(KEY_LCONTROL) and key_pressed(KEY_F) and m.menu_position>0 or key_down(KEY_RCONTROL) and key_pressed(KEY_F) and m.menu_position>0)
+{
+string[] plats=find_directories("sounds/objects/platforms/*");
+string tiletype=v.input("Find a platform",false,"carpet");
+if(platile1=="")
+return m.menu_position;
+m.menu_position=plats.length()-1;
+speak(platile1);
+platile1=string_to_lower_case(tiletype);
+}
+if(key_down(KEY_LCONTROL) and key_pressed(KEY_H) and m.menu_position>0 or key_down(KEY_RCONTROL) and key_pressed(KEY_H) and m.menu_position>0)
+{
+if(tilename!="hardland")
+{
+string [] tilers=find_files("sounds/objects/platforms/"+platile1+"/*hardland*");
+tilename=tilers[random(0,tilers.length()-1)];
+platslot=pool.play_stationary("sounds/objects/platforms/"+platile1+"/"+tilename,false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+}
+}
+if(key_down(KEY_LCONTROL) and key_pressed(KEY_L) and m.menu_position>0 or key_down(KEY_RCONTROL) and key_pressed(KEY_L) and m.menu_position>0)
+{
+if(tilename!="land")
+{
+string [] tilers=find_files("sounds/objects/platforms/"+platile1+"/*land*");
+for (uint i=0; i<tilers.length(); i++)
+{
+if(string_contains(tilers[i],"hard",1)>-1)
+tilers.remove_at(i);
+}
+tilename=tilers[random(0,tilers.length()-1)];
+platslot=pool.play_stationary("sounds/objects/platforms/"+platile1+"/"+tilename,false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+}
+}
+return 0;
+}
+string wallsmenu()
+{
+string[] borders=find_directories("sounds/objects/walls/*");
+setupmenu(true);
+m.music.volume=-100;
+m.set_callback(@walls_callback,"");
+for (uint i=0; i<borders.length(); i++)
+{
+m.add_item_tts(borders[i],borders[i],"",true);
+}
+int mres=m.run("Walls menu", true);
+if(mres==0)
+{
+bordsetmenu();
+}
+if(mres>0 and mres<=borders.length())
+{
+speak("wall set");
+}
+return m.get_item_name(mres);
+}
+int walls_callback(dynamic_menu_pro@ m, string data)
+{
+string walltile1;
+if(m.menu_position>0)
+walltile1=m.item_list[m.menu_position-1].name;
+if(key_down(KEY_SPACE) and m.menu_position>0 and spacehold==1 and keytimer.elapsed>=keytime)
+{
+string[] wallers=find_files("sounds/objects/walls/"+walltile1+"/*wall*");
+platslot=pool.play_stationary("sounds/objects/walls/"+walltile1+"/"+wallers[random(0,wallers.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+keytimer.restart();
+}
+if(key_pressed(KEY_SPACE) and m.menu_position>0 and spacehold==0)
+{
+string[] wallers=find_files("sounds/objects/walls/"+walltile1+"/*wall*");
+platslot=pool.play_stationary("sounds/objects/walls/"+walltile1+"/"+wallers[random(0,wallers.length()-1)],false);
+pool.update_sound_start_values(platslot,tilepan,tilevolume,tilepitch);
+}
+return 0;
+}
+string jumpsmenu()
+{
+string[] charjumps=find_directories("sounds/characters/jumps/*");
+setupmenu(true);
+m.music.volume=-100;
+m.set_callback(@jumps_callback,"");
+for (uint i=0; i<charjumps.length(); i++)
+{
+m.add_item_tts(charjumps[i],charjumps[i],"",true);
+}
+int mres=m.run("Jump sound menu", true);
+if(mres==0)
+{
+charsetmenu();
+}
+if(mres>0 and mres<=charjumps.length())
+{
+speak("jump sound set");
+}
+return m.get_item_name(mres);
+}
+int jumps_callback(dynamic_menu_pro@ m, string data)
+{
+string jumpsound;
+if(m.menu_position>0)
+jumpsound=m.item_list[m.menu_position-1].name;
+if(key_down(KEY_SPACE) and m.menu_position>0 and spacehold==1 and keytimer.elapsed>=keytime)
+{
+string[] jumpsfx=find_files("sounds/characters/jumps/"+jumpsound+"/*jump*");
+pool.play_stationary("sounds/characters/jumps/"+jumpsound+"/"+jumpsfx[random(0,jumpsfx.length()-1)],false);
+keytimer.restart();
+}
+if(key_pressed(KEY_SPACE) and m.menu_position>0 and spacehold==0)
+{
+string[] jumpsfx=find_files("sounds/characters/jumps/"+jumpsound+"/*jump*");
+pool.play_stationary("sounds/characters/jumps/"+jumpsound+"/"+jumpsfx[random(0,jumpsfx.length()-1)],false);
+}
+return 0;
+}
+string turnsmenu()
+{
+string[] charturns=find_directories("sounds/characters/turns/*");
+setupmenu(true);
+m.music.volume=-100;
+m.set_callback(@turns_callback,"");
+for (uint i=0; i<charturns.length(); i++)
+{
+m.add_item_tts(charturns[i],charturns[i],"",true);
+}
+int mres=m.run("turn sound menu", true);
+if(mres==0)
+{
+charsetmenu();
+}
+if(mres>0 and mres<=charturns.length())
+{
+speak("turn sound set");
+}
+return m.get_item_name(mres);
+}
+int turns_callback(dynamic_menu_pro@ m, string data)
+{
+string turnsound;
+if(m.menu_position>0)
+turnsound=m.item_list[m.menu_position-1].name;
+if(key_down(KEY_SPACE) and m.menu_position>0 and spacehold==1 and keytimer.elapsed>=keytime)
+{
+string[] turnsfx=find_files("sounds/characters/turns/"+turnsound+"/*turn*");
+pool.play_stationary("sounds/characters/turns/"+turnsound+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+keytimer.restart();
+}
+if(key_pressed(KEY_SPACE) and m.menu_position>0 and spacehold==0)
+{
+string[] turnsfx=find_files("sounds/characters/turns/"+turnsound+"/*turn*");
+pool.play_stationary("sounds/characters/turns/"+turnsound+"/"+turnsfx[random(0,turnsfx.length()-1)],false);
+}
+return 0;
+}
+string get_new_tile(string tile,int direction)
+{
+string[] plats=find_directories("sounds/objects/platforms/*");
+int platindex=-1;
+for (uint i=0; i<plats.length(); i++)
+{
+if (tile==plats[i])
+{
+platindex=i;
+break;
+}
+}
+if (platindex==-1)
+return tile;
+if (direction==1)
+{
+if (platindex>-1)
+platindex--;
+if (platindex<0)
+platindex=plats.length()-1;
+}
+else if (direction==2)
+{
+if (platindex>-1)
+platindex++;
+if (platindex>=plats.length())
+platindex=0;
+}
+else if (direction==3)
+{
+if (platindex>-1)
+platindex=random(0,plats.length()-1);
+}
+return plats[platindex];
+}
+string get_new_wall(string wall,int direction)
+{
+string[] borders=find_directories("sounds/objects/walls/*");
+int wallindex=-1;
+for (uint i=0; i<borders.length(); i++)
+{
+if (wall==borders[i])
+{
+wallindex=i;
+break;
+}
+}
+if (wallindex==-1)
+return wall;
+if (direction==1)
+{
+if (wallindex>-1)
+wallindex--;
+if (wallindex<0)
+wallindex=borders.length()-1;
+}
+else if (direction==2)
+{
+if (wallindex>-1)
+wallindex++;
+if (wallindex>=borders.length())
+wallindex=0;
+}
+else if (direction==3)
+{
+if (wallindex>-1)
+wallindex=random(0,borders.length()-1);
+}
+return borders[wallindex];
 }

@@ -5,11 +5,9 @@
 #include"menu.bgt"
 #include"m_pro.bgt"
 #include"movement.bgt"
-#include"prepgame.bgt"
 #include"rotation.bgt"
 #include"setupmenu.bgt"
 #include"sound_pool.bgt"
-#include"tilesim.bgt"
 #include "text_input.bgt"
 #include"virtualizer.bgt"
 typedef uint8 usmall; typedef int8 small;
